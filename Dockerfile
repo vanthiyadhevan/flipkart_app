@@ -11,6 +11,9 @@ RUN mvn dependency:go-offline -B
 # Copy the application source code
 COPY src ./src
 
+# Install Maven
+RUN apt-get update && apt-get install -y maven
+
 # Build the application
 RUN mvn clean package -DskipTests
 
