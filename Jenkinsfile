@@ -10,7 +10,7 @@ pipeline {
                         // Set the working directory
                         dir('/app') {
                             // Copy the POM file and download dependencies
-                            sh 'cp /path/to/your/project/pom.xml .'
+                            sh 'cp /home/mr-skyline/Downloads/flipkart2 1/flipkart2/pom.xml .'
                             sh 'mvn dependency:go-offline -B'
                         }
                     }
@@ -26,7 +26,7 @@ pipeline {
                         // Set the working directory
                         dir('/app') {
                             // Copy the application source code
-                            sh 'cp -r /path/to/your/project/src .'
+                            sh 'cp -r /home/mr-skyline/Downloads/flipkart2 1/flipkart2/src .'
                             // Run tests
                             sh 'mvn test'
                         }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Use Docker for building the image
-                    docker.build('open_cart_app', '-f /path/to/your/project/Dockerfile .')
+                    docker.build('open_cart_app', '-f /home/mr-skyline/Downloads/flipkart2 1/flipkart2/Dockerfile .')
                 }
             }
         }
