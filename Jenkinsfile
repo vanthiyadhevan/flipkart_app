@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Use the official Maven image for building
-                    docker.image('maven:3.8.4-openjdk-17-slim').inside('-v $HOME/.m2:/root/.m2') {
+                    docker.image('jenkins_maven:3.8.4-openjdk-17-slim').inside('-v $HOME/.m2:/root/.m2') {
                         // Set the working directory
                         dir('/app') {
                             // Copy the POM file and download dependencies
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Use the official Maven image for testing
-                    docker.image('maven:3.8.4-openjdk-17-slim').inside('-v $HOME/.m2:/root/.m2') {
+                    docker.image('Jenkins_maven:3.8.4-openjdk-17-slim').inside('-v $HOME/.m2:/root/.m2') {
                         // Set the working directory
                         dir('/app') {
                             // Copy the application source code
