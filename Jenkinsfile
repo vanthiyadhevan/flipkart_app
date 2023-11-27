@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker container
-                    docker.image('open_cart_app').withRun('-p 8080:8080') {
+                    docker.image('open_cart_app').withRun('-p 8880:80') {
                         // Your deployment steps go here if needed
                     }
                 }
